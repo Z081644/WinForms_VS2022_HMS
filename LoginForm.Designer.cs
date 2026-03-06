@@ -42,6 +42,7 @@ namespace HMS
             // 
             // btnlogin
             // 
+            btnlogin.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnlogin.Font = new Font("Calibri", 16.2F, FontStyle.Bold);
             btnlogin.Location = new Point(976, 554);
             btnlogin.Name = "btnlogin";
@@ -53,6 +54,7 @@ namespace HMS
             // 
             // btnclear
             // 
+            btnclear.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnclear.Font = new Font("Calibri", 16.2F, FontStyle.Bold);
             btnclear.Location = new Point(820, 554);
             btnclear.Name = "btnclear";
@@ -64,6 +66,7 @@ namespace HMS
             // 
             // txtuserid
             // 
+            txtuserid.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             txtuserid.Location = new Point(976, 442);
             txtuserid.Name = "txtuserid";
             txtuserid.Size = new Size(148, 27);
@@ -71,6 +74,7 @@ namespace HMS
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 22F, FontStyle.Bold | FontStyle.Italic);
@@ -83,6 +87,7 @@ namespace HMS
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Calibri", 22F, FontStyle.Bold | FontStyle.Italic);
@@ -94,6 +99,7 @@ namespace HMS
             // 
             // txtpassword
             // 
+            txtpassword.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             txtpassword.Location = new Point(976, 494);
             txtpassword.Name = "txtpassword";
             txtpassword.PasswordChar = '*';
@@ -118,6 +124,7 @@ namespace HMS
             DoubleBuffered = true;
             Name = "LoginForm";
             Text = "LoginForm";
+            FormClosed += LoginForm_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

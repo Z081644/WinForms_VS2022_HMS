@@ -259,43 +259,49 @@ VALUES (:Id, :Name, :Gender, :dob, :Age, :Contact, :Address, :doc_id)";
         private void button2_Click(object sender, EventArgs e)
         {
             var df = new DoctorForm();
-            df.Show();
-            this.Hide();
+            Hide();
+            df.ShowDialog();
+            Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var af = new AppointmentForm();
-            af.Show();
-            this.Hide();
+            Hide();
+            af.ShowDialog();
+            Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             var rf = new RoomForm();
-            rf.Show();
-            this.Hide();
+            Hide();
+            rf.ShowDialog();
+            Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             var phf = new PharmacyForm();
-            phf.Show();
-            this.Hide();
+            Hide();
+            phf.ShowDialog();
+            Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             var bf = new BillingForm();
-            bf.Show();
-            this.Hide();
+            Hide();
+            bf.ShowDialog();
+            Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             var mf = new Menuform();
-            mf.Show();
-            this.Hide();
+            Hide();
+            mf.ShowDialog();
+            Show();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -303,8 +309,9 @@ VALUES (:Id, :Name, :Gender, :dob, :Age, :Contact, :Address, :doc_id)";
             var res = MessageBox.Show("Do you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res != DialogResult.Yes) return;
             var login = new LoginForm();
-            login.Show();
-            this.Hide();
+            Hide();
+            login.ShowDialog();
+            Show();
         }
     }
 }

@@ -45,9 +45,9 @@ namespace HMS
             button2 = new Button();
             button1 = new Button();
             rdpPatient = new RoundedPanel();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             roundedPanel1 = new RoundedPanel();
             label3 = new Label();
             pictureBox2 = new PictureBox();
@@ -85,6 +85,7 @@ namespace HMS
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(44, 62, 80);
             panel3.Controls.Add(pictureBox8);
             panel3.Controls.Add(label6);
@@ -123,6 +124,7 @@ namespace HMS
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(44, 62, 80);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(button6);
@@ -253,6 +255,7 @@ namespace HMS
             // 
             // rdpPatient
             // 
+            rdpPatient.Anchor = AnchorStyles.None;
             rdpPatient.BackColor = Color.SlateGray;
             rdpPatient.BorderRadius = 30;
             rdpPatient.Controls.Add(label2);
@@ -262,27 +265,6 @@ namespace HMS
             rdpPatient.Name = "rdpPatient";
             rdpPatient.Size = new Size(320, 150);
             rdpPatient.TabIndex = 31;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 19F, FontStyle.Bold);
-            label1.Location = new Point(116, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(163, 78);
-            label1.TabIndex = 0;
-            label1.Text = "No. Of\r\nPatients :\r\n";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.Patientlogo;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(12, 16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(98, 120);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -295,8 +277,30 @@ namespace HMS
             label2.TabIndex = 2;
             label2.Text = "label2";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.Patientlogo;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(12, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(98, 120);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell", 19F, FontStyle.Bold);
+            label1.Location = new Point(116, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(163, 78);
+            label1.TabIndex = 0;
+            label1.Text = "No. Of\r\nPatients :\r\n";
+            // 
             // roundedPanel1
             // 
+            roundedPanel1.Anchor = AnchorStyles.None;
             roundedPanel1.BackColor = Color.SlateGray;
             roundedPanel1.BorderRadius = 30;
             roundedPanel1.Controls.Add(label3);
@@ -341,6 +345,7 @@ namespace HMS
             // 
             // roundedPanel2
             // 
+            roundedPanel2.Anchor = AnchorStyles.None;
             roundedPanel2.BackColor = Color.SlateGray;
             roundedPanel2.BorderRadius = 30;
             roundedPanel2.Controls.Add(label5);
@@ -385,6 +390,7 @@ namespace HMS
             // 
             // roundedPanel3
             // 
+            roundedPanel3.Anchor = AnchorStyles.None;
             roundedPanel3.BackColor = Color.SlateGray;
             roundedPanel3.BorderRadius = 30;
             roundedPanel3.Controls.Add(label9);
@@ -429,6 +435,7 @@ namespace HMS
             // 
             // roundedPanel4
             // 
+            roundedPanel4.Anchor = AnchorStyles.None;
             roundedPanel4.BackColor = Color.SlateGray;
             roundedPanel4.BorderRadius = 30;
             roundedPanel4.Controls.Add(pictureBox5);
@@ -461,6 +468,7 @@ namespace HMS
             // 
             // roundedPanel5
             // 
+            roundedPanel5.Anchor = AnchorStyles.None;
             roundedPanel5.BackColor = Color.SlateGray;
             roundedPanel5.BorderRadius = 30;
             roundedPanel5.Controls.Add(pictureBox6);

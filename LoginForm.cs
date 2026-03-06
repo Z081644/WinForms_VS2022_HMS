@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS
@@ -11,11 +10,12 @@ namespace HMS
             InitializeComponent();
         }
 
-        private async void btnlogin_Click(object sender, EventArgs e)
+        private void btnlogin_Click(object sender, EventArgs e)
         {
-            var username = txtuserid?.Text?.Trim();
-            var password = txtpassword?.Text; // For production consider a more secure handling
+            string username = txtuserid?.Text?.Trim() ?? "";
+            string password = txtpassword?.Text ?? "";
 
+            // 1. Validation
             if (string.IsNullOrWhiteSpace(username))
             {
                 MessageBox.Show("Please enter a user name.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -30,20 +30,31 @@ namespace HMS
                 return;
             }
 
+            // 2. Disable buttons so the user can't double-click
             btnlogin.Enabled = false;
             btnclear.Enabled = false;
+
             try
             {
-                bool isAuthenticated = await AuthenticateAsync(username, password).ConfigureAwait(false);
+                // 3. Simple, Synchronous Authentication Check
+                bool isAuthenticated = Authenticate(username, password);
 
-                // Switch back to UI thread to update UI
-                if (InvokeRequired)
+                if (isAuthenticated)
                 {
-                    Invoke(new Action(() => PostAuthentication(isAuthenticated)));
+                    // Perfect navigation pattern (Hide -> ShowDialog -> Show)
+                    var menu = new Menuform();
+                    this.Hide();
+                    menu.ShowDialog();
+
+                    // Once Menuform closes, clear the login fields and show LoginForm again
+                    txtpassword?.Clear();
+                    this.Show();
                 }
                 else
                 {
-                    PostAuthentication(isAuthenticated);
+                    MessageBox.Show("Invalid user name or password.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtpassword?.Clear();
+                    txtpassword?.Focus();
                 }
             }
             catch (Exception ex)
@@ -52,60 +63,35 @@ namespace HMS
             }
             finally
             {
-                if (InvokeRequired)
-                {
-                    Invoke(new Action(() =>
-                    {
-                        btnlogin.Enabled = true;
-                        btnclear.Enabled = true;
-                    }));
-                }
-                else
-                {
-                    btnlogin.Enabled = true;
-                    btnclear.Enabled = true;
-                }
+                // 4. Re-enable buttons no matter what happens
+                btnlogin.Enabled = true;
+                btnclear.Enabled = true;
             }
         }
 
-        private void PostAuthentication(bool ok)
+        // Clean, normal method returning a simple true/false
+        private bool Authenticate(string username, string password)
         {
-            if (ok)
-            {
-                var menu = new Menuform(); // ensure class name matches your project
-                menu.Show();
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid user name or password.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtpassword.Clear();
-                txtpassword.Focus();
-            }
-        }
-
-        private Task<bool> AuthenticateAsync(string username, string password)
-        {
-            // Replace with your real authentication (DB, API, etc.)
-            return Task.Run(async () =>
-            {
-                await Task.Delay(300).ConfigureAwait(false);
-                // Demo-only credentials -- DO NOT use in production
-                return string.Equals(username, "system", StringComparison.OrdinalIgnoreCase)
-                       && password == "int123";
-            });
+            // Demo-only credentials
+            return string.Equals(username, "system", StringComparison.OrdinalIgnoreCase) && password == "int123";
         }
 
         private void btnclear_Click(object sender, EventArgs e)
         {
-            txtuserid.Clear();
-            txtpassword.Clear();
-            txtuserid.Focus();
+            txtuserid?.Clear();
+            txtpassword?.Clear();
+            txtuserid?.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            // If not needed remove the event subscription in the designer to avoid empty handler.
+            // Intentionally left blank. 
+            // Tip: If you accidentally double-clicked a label to create this, you can remove it in the Designer Events to keep code clean.
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit(); // Ensure the entire application exits when the login form is closed
         }
     }
 }

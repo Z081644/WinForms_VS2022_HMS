@@ -108,7 +108,7 @@ namespace HMS
                 // 1. Auto-fill the Rate and Qty if the user selects a Service Description
                 if (e.ColumnIndex == 0 && row.Cells[0].Value != null)
                 {
-                    string selectedService = row.Cells[0].Value.ToString();
+                    string selectedService = row.Cells[0].Value?.ToString() ?? "";
                     decimal predefinedRate = GetServiceRate(selectedService);
 
                     // Set the Rate column (Index 2)
@@ -208,7 +208,7 @@ namespace HMS
                         cmdHeader.Parameters.Add(":tax", Convert.ToDecimal(txtTax.Text));
                         cmdHeader.Parameters.Add(":disc", Convert.ToDecimal(txtDiscount.Text));
                         cmdHeader.Parameters.Add(":net", Convert.ToDecimal(txtNet.Text));
-                        cmdHeader.Parameters.Add(":paymethod", cmbPaymentMethod.SelectedItem.ToString());
+                        cmdHeader.Parameters.Add(":paymethod", cmbPaymentMethod.SelectedItem?.ToString() ?? "Cash");
 
                         // Output parameter to get the auto-generated ID back
                         OracleParameter outputIdParam = new OracleParameter(":inserted_bill_no", OracleDbType.Decimal);
@@ -218,7 +218,7 @@ namespace HMS
                         cmdHeader.ExecuteNonQuery();
 
                         // Get the newly created Bill Number
-                        string newBillNo = outputIdParam.Value.ToString();
+                        string newBillNo = outputIdParam.Value?.ToString() ?? "0";
 
                         // 2. Loop through the grid and insert Details
                         string detailQuery = @"INSERT INTO BILL_DETAILS (DETAIL_ID, BILL_NO, SERVICE_DESC, QTY, RATE, LINE_TOTAL) 
@@ -269,7 +269,7 @@ namespace HMS
             if (e.RowIndex >= 0 && dgvBillList.Columns[e.ColumnIndex].Name == "btnView")
             {
                 // Jis row par click hua hai, wahan se data (jaise BILL_NO) nikal lein
-                string selectedBillNo = dgvBillList.Rows[e.RowIndex].Cells["BILL_NO"].Value.ToString();
+                string selectedBillNo = dgvBillList.Rows[e.RowIndex].Cells["BILL_NO"].Value?.ToString() ?? "";
 
                 // Naya form open karein aur usme ye data bhej dein
                 BillDetailsForm detailsForm = new BillDetailsForm(selectedBillNo);
@@ -280,36 +280,41 @@ namespace HMS
         private void button1_Click(object sender, EventArgs e)
         {
             PatientForm pf = new PatientForm();
-            pf.Show();
-            this.Hide();
+            Hide();
+            pf.ShowDialog();
+            Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DoctorForm df = new DoctorForm();
-            df.Show();
-            this.Hide();
+            Hide();
+            df.ShowDialog();
+            Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             AppointmentForm af = new AppointmentForm();
-            af.Show();
-            this.Hide();
+            Hide();
+            af.ShowDialog();
+            Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             RoomForm rf = new RoomForm();
-            rf.Show();
-            this.Hide();
+            Hide();
+            rf.ShowDialog();
+            Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             PharmacyForm phf = new PharmacyForm();
-            phf.Show();
-            this.Hide();
+            Hide();
+            phf.ShowDialog();
+            Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -320,8 +325,9 @@ namespace HMS
         private void label1_Click(object sender, EventArgs e)
         {
             Menuform mf = new Menuform();
-            mf.Show();
-            this.Hide();
+            Hide();
+            mf.ShowDialog();
+            Show();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -331,8 +337,9 @@ namespace HMS
                 return;
 
             var login = new LoginForm();
-            login.Show();
-            this.Hide();
+            Hide();
+            login.ShowDialog();
+            Show();
         }
 
         private void txtNet_TextChanged(object sender, EventArgs e)

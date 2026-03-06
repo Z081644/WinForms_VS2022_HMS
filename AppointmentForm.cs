@@ -230,8 +230,6 @@ WHERE appointment_no = :appNo";
         {
             // Defensive clear: avoid NullReferenceException if a control is null
             textBox1?.Clear();
-            textBox2?.Clear();
-            textBox3?.Clear();
 
             if (dateTimePicker1 != null)
                 dateTimePicker1.Value = DateTime.Now;
@@ -299,29 +297,33 @@ WHERE appointment_no = :appNo";
             if (res != DialogResult.Yes)
                 return;
             var lf = new LoginForm();
-            lf.Show();
-            this.Hide();
+            Hide();
+            lf.ShowDialog();
+            Show();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
             Menuform mf = new Menuform();
-            mf.Show();
-            this.Hide();
+            Hide();
+            mf.ShowDialog();
+            Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             PatientForm pf = new PatientForm();
-            pf.Show();
-            this.Hide();
+            Hide();
+            pf.ShowDialog();
+            Show();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             DoctorForm df = new DoctorForm();
-            df.Show();
-            this.Hide();
+            Hide();
+            df.ShowDialog();
+            Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -332,22 +334,25 @@ WHERE appointment_no = :appNo";
         private void button7_Click(object sender, EventArgs e)
         {
             RoomForm rf = new RoomForm();
-            rf.Show();
-            this.Hide();
+            Hide();
+            rf.ShowDialog();
+            Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             PharmacyForm phf = new PharmacyForm();
-            phf.Show();
-            this.Hide();
+            Hide();
+            phf.ShowDialog();
+            Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             BillingForm bf = new BillingForm();
-            bf.Show();
-            this.Hide();
+            Hide();
+            bf.ShowDialog();
+            Show();
         }
     }
 }

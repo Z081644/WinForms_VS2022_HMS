@@ -164,12 +164,13 @@ namespace HMS
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(177, 446);
+            dataGridView1.Location = new Point(173, 446);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(985, 197);
+            dataGridView1.Size = new Size(989, 197);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -361,6 +362,7 @@ namespace HMS
             // 
             // pictureBox8
             // 
+            pictureBox8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.BackgroundImage = Properties.Resources.logout;
             pictureBox8.BackgroundImageLayout = ImageLayout.Zoom;
@@ -445,17 +447,16 @@ namespace HMS
             BackgroundImage = Properties.Resources.roompage;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1162, 643);
+            Controls.Add(panel2);
             Controls.Add(radioButton4);
             Controls.Add(radioButton3);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
-            Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
             Controls.Add(comboBox1);
             Controls.Add(textBox4);
             Controls.Add(textBox2);
@@ -465,10 +466,11 @@ namespace HMS
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(dataGridView1);
             DoubleBuffered = true;
             Margin = new Padding(2);
             Name = "RoomForm";
-            Text = "Room/Ward Form";
+            Text = "23";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);

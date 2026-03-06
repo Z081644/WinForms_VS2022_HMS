@@ -1,5 +1,4 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +29,7 @@ namespace HMS
 
         private void LoadBillData()
         {
-            using (OracleConnection conn = new OracleConnection(connString))
+            using (OracleConnection conn = new OracleConnection(constr))
             {
                 try
                 {

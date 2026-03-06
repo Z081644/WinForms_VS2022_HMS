@@ -435,8 +435,6 @@ namespace HMS
         private Label label4;
         private Label label5;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
         private DateTimePicker dateTimePicker1;
         private ComboBox cmbroom;
         private Button button1;
