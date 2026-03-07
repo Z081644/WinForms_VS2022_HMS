@@ -259,10 +259,6 @@ namespace HMS
                 }
             }
         }
-        private void lblNet_Click(object sender, EventArgs e)
-        {
-            // no-op
-        }
 
         private void dgvBillDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -275,76 +271,6 @@ namespace HMS
                 BillDetailsForm detailsForm = new BillDetailsForm(selectedBillNo);
                 detailsForm.Show();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PatientForm pf = new PatientForm();
-            Hide();
-            pf.ShowDialog();
-            Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DoctorForm df = new DoctorForm();
-            Hide();
-            df.ShowDialog();
-            Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AppointmentForm af = new AppointmentForm();
-            Hide();
-            af.ShowDialog();
-            Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            RoomForm rf = new RoomForm();
-            Hide();
-            rf.ShowDialog();
-            Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            PharmacyForm phf = new PharmacyForm();
-            Hide();
-            phf.ShowDialog();
-            Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("You are already in the Billing section.");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            Menuform mf = new Menuform();
-            Hide();
-            mf.ShowDialog();
-            Show();
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            var res = MessageBox.Show("Do you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res != DialogResult.Yes)
-                return;
-
-            var login = new LoginForm();
-            Hide();
-            login.ShowDialog();
-            Show();
-        }
-
-        private void txtNet_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

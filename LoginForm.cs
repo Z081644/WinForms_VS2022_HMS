@@ -83,12 +83,6 @@ namespace HMS
             txtuserid?.Focus();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // Intentionally left blank. 
-            // Tip: If you accidentally double-clicked a label to create this, you can remove it in the Designer Events to keep code clean.
-        }
-
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit(); // Ensure the entire application exits when the login form is closed

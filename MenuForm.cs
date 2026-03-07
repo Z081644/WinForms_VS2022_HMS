@@ -9,6 +9,18 @@ namespace HMS
         public Menuform()
         {
             InitializeComponent();
+            LoadFormInPanel(new DashboardForm(this)); // Default me Dashboard khulega
+        }
+
+        public void LoadFormInPanel(Form childForm)
+        {
+            mainPanel.Controls.Clear(); // Pehle se open form ko hata dega
+            childForm.TopLevel = false; // Alag window banne se rokega
+            childForm.FormBorderStyle = FormBorderStyle.None; // Border hata dega
+            childForm.Dock = DockStyle.Fill; // Panel ki puri jagah le lega
+
+            mainPanel.Controls.Add(childForm); // Panel me form daal dega
+            childForm.Show(); // Form ko dikhayega
         }
         private void pictureBox8_Click_1(object sender, EventArgs e)
         {
@@ -24,50 +36,38 @@ namespace HMS
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            PatientForm pf = new PatientForm();
-            Hide();
-            pf.ShowDialog();
-            Show();
+            LoadFormInPanel(new PatientForm()); // Patient form panel me khulega
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DoctorForm df = new DoctorForm();
-            Hide();
-            df.ShowDialog();
-            Show();
+            LoadFormInPanel(new DoctorForm());
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            BillingForm bf = new BillingForm();
-            Hide();
-            bf.ShowDialog();
-            Show();
+            LoadFormInPanel(new BillingForm());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AppointmentForm af = new AppointmentForm();
-            Hide();
-            af.ShowDialog();
-            Show();
+            LoadFormInPanel(new AppointmentForm());
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            RoomForm rf = new RoomForm();
-            this.Hide();
-            rf.ShowDialog();
-            this.Show();
+            LoadFormInPanel(new RoomForm());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PharmacyForm phf = new PharmacyForm();
-            Hide();
-            phf.Show();
-            Show();
+            LoadFormInPanel(new PharmacyForm());
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            LoadFormInPanel(new DashboardForm(this));
         }
     }
 }

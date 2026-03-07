@@ -83,7 +83,6 @@ namespace HMS
             label1.Size = new Size(208, 45);
             label1.TabIndex = 11;
             label1.Text = "User Name: ";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -109,8 +108,7 @@ namespace HMS
             // LoginForm
             // 
             AcceptButton = btnlogin;
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.DimGray;
             BackgroundImage = Properties.Resources.loginpage;
             BackgroundImageLayout = ImageLayout.Stretch;
