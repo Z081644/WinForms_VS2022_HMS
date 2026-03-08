@@ -7,7 +7,7 @@ namespace HMS
 {
     public partial class PatientForm : Form
     {
-        private readonly string constr = "Data Source=Localhost:1521/XE;User Id=system;Password=int123;";
+        private readonly string constr = "Data Source=Localhost:1521/XE;User Id=system;Password=system;";
 
         public PatientForm()
         {
@@ -220,7 +220,24 @@ VALUES (:Id, :Name, :Gender, :dob, :Age, :Contact, :Address, :doc_id)";
         {
             if (e.RowIndex < 0) return;
 
-            DataGridViewRow row = dgvPatients.Rows[e.RowIndex];
+            var row = dgvPatients.Rows[e.RowIndex];
+            if (row.IsNewRow)
+            {
+                dateTimePicker1.Value = DateTime.Now;
+                // or dateTimePicker1.Checked = false; // if using ShowCheckBox
+                return;
+            }
+
+            object dobCell = row.Cells["DOB"].Value;
+            if (dobCell != null && dobCell != DBNull.Value && DateTime.TryParse(dobCell.ToString(), out DateTime dob))
+            {
+                dateTimePicker1.Value = dob;
+            }
+            else
+            {
+                // no DOB available
+                dateTimePicker1.Value = DateTime.Now; // or set Checked = false if you want an empty state
+            }
 
             txtPid.Text = row.Cells["PATIENT_ID"].Value?.ToString() ?? "";
             txtPName.Text = row.Cells["PAT_NAME"].Value?.ToString() ?? "";
@@ -229,7 +246,6 @@ VALUES (:Id, :Name, :Gender, :dob, :Age, :Contact, :Address, :doc_id)";
             rdoMale.Checked = gender == "Male";
             rdoFemale.Checked = gender == "Female";
 
-            dateTimePicker1.Value = Convert.ToDateTime(row.Cells["DOB"].Value ?? DateTime.Now);
             txtAge.Text = row.Cells["AGE"].Value?.ToString() ?? "";
             txtContact.Text = row.Cells["CONTACT"].Value?.ToString() ?? "";
             txtAddress.Text = row.Cells["ADDRESS"].Value?.ToString() ?? "";

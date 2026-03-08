@@ -7,7 +7,7 @@ namespace HMS
 {
     public partial class PharmacyForm : Form
     {
-        private readonly string constr = "Data Source=localhost:1521/xe;User Id=system;Password=int123;";
+        private readonly string constr = "Data Source=localhost:1521/xe;User Id=system;Password=system;";
 
         public PharmacyForm()
         {

@@ -15,7 +15,7 @@ namespace HMS
     public partial class BillDetailsForm : Form
     {
         string searchBillNo;
-        string constr = "Data Source=localhost:1521/xe;User Id=system;Password=int123;";
+        string constr = "Data Source=localhost:1521/xe;User Id=system;Password=system;";
         public BillDetailsForm(string bNo)
         {
             InitializeComponent();
@@ -37,9 +37,10 @@ namespace HMS
 
                     // --- 1. BILL HEADER aur PATIENT ka Data Laana (JOIN lagakar) ---
                     string headerQuery = @"SELECT h.BILL_NO, h.SUB_TOTAL, h.TAX_AMOUNT, h.DISCOUNT, 
-                                          h.NET_AMOUNT, h.PAYMENT_METHOD, p.PAT_NAME 
+                                          h.NET_AMOUNT, h.PAYMENT_METHOD, p.PAT_NAME, d.DOC_NAME 
                                    FROM BILL_HEADER h 
-                                   JOIN PATIENTS p ON h.PID = p.PATIENT_ID 
+                                   JOIN PATIENTS p ON h.PID = p.PATIENT_ID
+                                   JOIN DOCTORS d ON p.DOC_ID = d.DOCTOR_ID       
                                    WHERE h.BILL_NO = :bno";
 
                     OracleCommand cmdHeader = new OracleCommand(headerQuery, conn);
@@ -55,7 +56,7 @@ namespace HMS
 
                             // Agar aapke database mein Doctor ka table hai, toh yahan column name likhein
                             // Filhal ke liye main ek placeholder lagaya hai.
-                            lblDoctorName.Text = "Doctor Name: Dr. Assigned Doctor";
+                            lblDoctorName.Text = "Doctor Name: " + reader["DOC_NAME"].ToString();
 
                             lblSubTotal.Text = "Sub Total: ₹" + reader["SUB_TOTAL"].ToString();
                             lblTax.Text = "Tax: ₹" + reader["TAX_AMOUNT"].ToString();

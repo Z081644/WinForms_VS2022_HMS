@@ -7,7 +7,7 @@ namespace HMS
 {
     public partial class AppointmentForm : Form
     {
-        private readonly string constr = "Data Source=localhost:1521/XE;User Id=system;Password=int123;";
+        private readonly string constr = "Data Source=localhost:1521/XE;User Id=system;Password=system;";
 
         public AppointmentForm()
         {
@@ -27,12 +27,12 @@ namespace HMS
             try
             {
                 using (var conn = new OracleConnection(constr))
-                using (var da = new OracleDataAdapter("SELECT ward_id FROM ward", conn))
+                using (var da = new OracleDataAdapter("SELECT ward_name,ward_id FROM ward", conn))
                 {
                     var dt = new DataTable();
                     da.Fill(dt);
                     cmbroom.DataSource = dt;
-                    cmbroom.DisplayMember = "ward_id";
+                    cmbroom.DisplayMember = "ward_name";
                     cmbroom.ValueMember = "ward_id";
                     cmbroom.SelectedIndex = -1;
                 }
@@ -48,13 +48,13 @@ namespace HMS
             try
             {
                 using (var conn = new OracleConnection(constr))
-                using (var da = new OracleDataAdapter("SELECT PATIENT_ID FROM PATIENTS", conn))
+                using (var da = new OracleDataAdapter("SELECT PAT_NAME,PATIENT_ID FROM PATIENTS", conn))
                 {
                     var dt = new DataTable();
                     da.Fill(dt);
                     // Use the actual column name as DisplayMember/ValueMember
                     cmbpatient.DataSource = dt;
-                    cmbpatient.DisplayMember = "PATIENT_ID";
+                    cmbpatient.DisplayMember = "PAT_NAME";
                     cmbpatient.ValueMember = "PATIENT_ID";
                     cmbpatient.SelectedIndex = -1;
                 }
@@ -70,12 +70,12 @@ namespace HMS
             try
             {
                 using (var conn = new OracleConnection(constr))
-                using (var da = new OracleDataAdapter("SELECT DOCTOR_ID FROM DOCTORS", conn))
+                using (var da = new OracleDataAdapter("SELECT DOC_NAME,DOCTOR_ID FROM DOCTORS", conn))
                 {
                     var dt = new DataTable();
                     da.Fill(dt);
                     cmbdoc.DataSource = dt;
-                    cmbdoc.DisplayMember = "DOCTOR_ID";
+                    cmbdoc.DisplayMember = "DOC_NAME";
                     cmbdoc.ValueMember = "DOCTOR_ID";
                     cmbdoc.SelectedIndex = -1;
                 }

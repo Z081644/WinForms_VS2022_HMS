@@ -7,7 +7,7 @@ namespace HMS
 {
     public partial class RoomForm : Form
     {
-        private readonly string constr = "User Id=System;Password=int123;Data Source=localhost:1521/XE;";
+        private readonly string constr = "User Id=System;Password=system;Data Source=localhost:1521/XE;";
 
         public RoomForm()
         {

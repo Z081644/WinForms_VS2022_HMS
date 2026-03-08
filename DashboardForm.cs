@@ -15,7 +15,7 @@ namespace HMS
     public partial class DashboardForm : Form
     {
         Menuform mf;
-        private readonly string constr = "Data Source= localhost:1521/XE;User Id=system;Password=int123;";
+        private readonly string constr = "Data Source= localhost:1521/XE;User Id=system;Password=system;";
         public DashboardForm(Menuform parentForm)
         {
             InitializeComponent();

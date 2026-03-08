@@ -65,7 +65,7 @@ namespace HMS
             // 
             colService.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
             colService.HeaderText = "Service Description";
-            colService.Items.AddRange(new object[] { "Emergency Bill", "OPD Bill (Out Patient Department)", "IPD Bill (In Patient Department)", "Consultation Bill", "Surgery Bill", "Laboratory Bill", "X-Ray", "CT Scan", "MRI", "ECG", "Sonography", "Pharmacy Bill", "Nursing Charges", "Operation Theatre (OT) Charges", "Room / Ward Charges", "ICU Bill", "Ambulance Bill", "Admission Charges", "Discharge Charges" });
+            colService.Items.AddRange(new object[] { "Emergency Bill", "OPD Bill (Out Patient Department)", "IPD Bill (In Patient Department)", "Consultation Bill", "Surgery Bill", "Laboratory Bill", "X-Ray", "CT Scan", "MRI", "ECG", "Sonography", "Nursing Charges", "Operation Theatre (OT) Charges", "Room / Ward Charges", "ICU Bill", "Ambulance Bill", "Admission Charges", "Discharge Charges" });
             colService.MinimumWidth = 10;
             colService.Name = "colService";
             colService.Width = 250;

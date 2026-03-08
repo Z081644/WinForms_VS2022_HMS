@@ -7,7 +7,7 @@ namespace HMS
 {
     public partial class DoctorForm : Form
     {
-        private readonly string constr = "Data Source=Localhost:1521/XE;User Id=system;Password=int123;";
+        private readonly string constr = "Data Source=Localhost:1521/XE;User Id=system;Password=system;";
 
         public DoctorForm()
         {

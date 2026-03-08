@@ -11,7 +11,7 @@ namespace HMS
 {
     public partial class BillingForm : Form
     {
-        private readonly string constr = "Data Source=Localhost:1521/XE;User Id=system;Password=int123;";
+        private readonly string constr = "Data Source=Localhost:1521/XE;User Id=system;Password=system;";
 
         public BillingForm()
         {
@@ -88,7 +88,6 @@ namespace HMS
                 case "MRI": return 7000;
                 case "ECG": return 400;
                 case "Sonography": return 1500;
-                case "Pharmacy Bill": return 0; // Set to 0 so the user can type the exact medicine cost
                 case "Nursing Charges": return 800;
                 case "Operation Theatre (OT) Charges": return 10000;
                 case "Room / Ward Charges": return 2000;
