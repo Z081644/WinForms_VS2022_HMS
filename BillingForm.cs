@@ -24,6 +24,7 @@ namespace HMS
             LoadGeneratedBills();
             cmbPaymentMethod.SelectedIndex = 0;
         }
+
         private void LoadPatients()
         {
             using (OracleConnection conn = new OracleConnection(constr))

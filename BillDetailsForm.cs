@@ -65,7 +65,7 @@ namespace HMS
                         }
                         else
                         {
-                            MessageBox.Show("Is Bill Number ka koi record nahi mila!");
+                            MessageBox.Show("Didn't Find any Details for this Bill No.");
                             this.Close();
                             return;
                         }

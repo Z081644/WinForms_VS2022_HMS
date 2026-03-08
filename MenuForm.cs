@@ -11,7 +11,6 @@ namespace HMS
             InitializeComponent();
             LoadFormInPanel(new DashboardForm(this)); // Default me Dashboard khulega
         }
-
         public void LoadFormInPanel(Form childForm)
         {
             mainPanel.Controls.Clear(); // Pehle se open form ko hata dega

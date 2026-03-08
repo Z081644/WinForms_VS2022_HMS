@@ -13,7 +13,6 @@ namespace HMS
         {
             InitializeComponent();
         }
-
         private void PatientForm_Load(object sender, EventArgs e)
         {
             LoadPatientData();

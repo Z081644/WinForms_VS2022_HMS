@@ -21,7 +21,6 @@ namespace HMS
             InitializeComponent();
             mf = parentForm;
         }
-
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             LoadRealTimeData();
@@ -88,7 +87,7 @@ namespace HMS
 
         private void roundedPanel5_Click(object sender, EventArgs e)
         {
-            mf.LoadFormInPanel(new BillingForm());
+            mf.LoadFormInPanel(new BillingForm());   
         }
     }
 }

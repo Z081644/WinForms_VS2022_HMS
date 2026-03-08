@@ -18,7 +18,6 @@ namespace HMS
         {
             LoadGrid();
         }
-
         private void LoadGrid()
         {
             try

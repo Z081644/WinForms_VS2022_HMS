@@ -9,7 +9,6 @@ namespace HMS
         {
             InitializeComponent();
         }
-
         private void btnlogin_Click(object sender, EventArgs e)
         {
             string username = txtuserid?.Text?.Trim() ?? "";

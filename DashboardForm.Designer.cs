@@ -19,7 +19,6 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -356,7 +355,7 @@
 
         #endregion
 
-        private RoundedPanel roundedPanel5;
+        private RoundedPanel roundedPanel5;    
         private PictureBox pictureBox6;
         private Label label14;
         private RoundedPanel rdpPatient;

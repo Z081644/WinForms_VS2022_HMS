@@ -13,7 +13,6 @@ namespace HMS
             if (disposing && (components != null)) { components.Dispose(); }
             base.Dispose(disposing);
         }
-
         private void InitializeComponent()
         {
             cmbPatient = new ComboBox();

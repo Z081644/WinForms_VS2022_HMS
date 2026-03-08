@@ -1,6 +1,7 @@
 ﻿namespace HMS
 {
     partial class BillDetailsForm
+
     {
         private System.ComponentModel.IContainer components = null;
 

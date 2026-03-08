@@ -18,7 +18,6 @@ namespace HMS
         {
             LoadDoctorData();
         }
-
         private void LoadDoctorData()
         {
             try
