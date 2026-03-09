@@ -120,7 +120,7 @@ namespace HMS
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(176, 27);
-            textBox1.TabIndex = 5;
+            textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
@@ -128,7 +128,7 @@ namespace HMS
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(176, 27);
-            textBox2.TabIndex = 6;
+            textBox2.TabIndex = 2;
             // 
             // textBox4
             // 
@@ -140,13 +140,15 @@ namespace HMS
             // 
             // comboBox1
             // 
+            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "General Ward", "Semi-Private Room", "Private Room", "Deluxe/Suite" });
             comboBox1.Location = new Point(292, 161);
             comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(176, 28);
-            comboBox1.TabIndex = 9;
+            comboBox1.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -158,48 +160,53 @@ namespace HMS
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(805, 197);
             dataGridView1.TabIndex = 10;
+            dataGridView1.TabStop = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
+            button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button1.Location = new Point(521, 295);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(92, 42);
-            button1.TabIndex = 11;
+            button1.TabIndex = 9;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button2.Location = new Point(630, 295);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(92, 42);
-            button2.TabIndex = 12;
+            button2.TabIndex = 10;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button3
             // 
+            button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button3.Location = new Point(521, 352);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(92, 42);
-            button3.TabIndex = 13;
+            button3.TabIndex = 11;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // button4
             // 
+            button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button4.Location = new Point(630, 352);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(92, 42);
-            button4.TabIndex = 14;
+            button4.TabIndex = 12;
             button4.Text = "Clear";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
@@ -212,7 +219,7 @@ namespace HMS
             radioButton1.Location = new Point(292, 196);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(49, 36);
-            radioButton1.TabIndex = 33;
+            radioButton1.TabIndex = 4;
             radioButton1.TabStop = true;
             radioButton1.Text = "2";
             radioButton1.UseVisualStyleBackColor = false;
@@ -225,7 +232,7 @@ namespace HMS
             radioButton2.Location = new Point(357, 196);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(49, 36);
-            radioButton2.TabIndex = 34;
+            radioButton2.TabIndex = 5;
             radioButton2.TabStop = true;
             radioButton2.Text = "4";
             radioButton2.UseVisualStyleBackColor = false;
@@ -238,7 +245,7 @@ namespace HMS
             radioButton3.Location = new Point(430, 196);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(49, 36);
-            radioButton3.TabIndex = 35;
+            radioButton3.TabIndex = 6;
             radioButton3.TabStop = true;
             radioButton3.Text = "6";
             radioButton3.UseVisualStyleBackColor = false;
@@ -251,7 +258,7 @@ namespace HMS
             radioButton4.Location = new Point(497, 196);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(63, 36);
-            radioButton4.TabIndex = 36;
+            radioButton4.TabIndex = 7;
             radioButton4.TabStop = true;
             radioButton4.Text = "10";
             radioButton4.UseVisualStyleBackColor = false;
@@ -293,7 +300,9 @@ namespace HMS
             DoubleBuffered = true;
             Margin = new Padding(2);
             Name = "RoomForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "23";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);

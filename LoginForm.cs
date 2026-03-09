@@ -86,5 +86,10 @@ namespace HMS
         {
             Application.Exit(); // Ensure the entire application exits when the login form is closed
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            txtuserid.Focus();
+        }
     }
 }

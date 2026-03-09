@@ -43,7 +43,7 @@ namespace HMS
             // 
             btnlogin.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnlogin.Font = new Font("Calibri", 16.2F, FontStyle.Bold);
-            btnlogin.Location = new Point(976, 554);
+            btnlogin.Location = new Point(803, 453);
             btnlogin.Name = "btnlogin";
             btnlogin.Size = new Size(140, 40);
             btnlogin.TabIndex = 8;
@@ -55,7 +55,7 @@ namespace HMS
             // 
             btnclear.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnclear.Font = new Font("Calibri", 16.2F, FontStyle.Bold);
-            btnclear.Location = new Point(820, 554);
+            btnclear.Location = new Point(647, 453);
             btnclear.Name = "btnclear";
             btnclear.Size = new Size(140, 40);
             btnclear.TabIndex = 9;
@@ -66,7 +66,7 @@ namespace HMS
             // txtuserid
             // 
             txtuserid.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            txtuserid.Location = new Point(976, 442);
+            txtuserid.Location = new Point(803, 341);
             txtuserid.Name = "txtuserid";
             txtuserid.Size = new Size(148, 27);
             txtuserid.TabIndex = 10;
@@ -77,7 +77,7 @@ namespace HMS
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 22F, FontStyle.Bold | FontStyle.Italic);
-            label1.Location = new Point(762, 433);
+            label1.Location = new Point(589, 332);
             label1.Name = "label1";
             label1.Size = new Size(208, 45);
             label1.TabIndex = 11;
@@ -89,7 +89,7 @@ namespace HMS
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Calibri", 22F, FontStyle.Bold | FontStyle.Italic);
-            label2.Location = new Point(771, 483);
+            label2.Location = new Point(598, 382);
             label2.Name = "label2";
             label2.Size = new Size(189, 45);
             label2.TabIndex = 12;
@@ -98,7 +98,7 @@ namespace HMS
             // txtpassword
             // 
             txtpassword.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            txtpassword.Location = new Point(976, 494);
+            txtpassword.Location = new Point(803, 393);
             txtpassword.Name = "txtpassword";
             txtpassword.PasswordChar = '*';
             txtpassword.Size = new Size(148, 27);
@@ -120,8 +120,11 @@ namespace HMS
             Controls.Add(btnlogin);
             DoubleBuffered = true;
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
+            WindowState = FormWindowState.Maximized;
             FormClosed += LoginForm_FormClosed;
+            Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

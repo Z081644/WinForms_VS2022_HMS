@@ -23,6 +23,7 @@ namespace HMS
             LoadPatients();
             LoadGeneratedBills();
             cmbPaymentMethod.SelectedIndex = 0;
+            cmbPatient.Focus();
         }
 
         private void LoadPatients()

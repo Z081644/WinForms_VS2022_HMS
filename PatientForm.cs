@@ -17,6 +17,7 @@ namespace HMS
         {
             LoadPatientData();
             LoadDoctorsIntoCombo();
+            txtPid.Focus();
         }
 
         private void LoadPatientData()
@@ -269,6 +270,16 @@ VALUES (:Id, :Name, :Gender, :dob, :Age, :Contact, :Address, :doc_id)";
             int age = now.Year - dob.Year;
             if (now < dob.AddYears(age)) age--;
             txtAge.Text = age.ToString();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAddress_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

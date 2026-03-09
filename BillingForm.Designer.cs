@@ -42,10 +42,12 @@ namespace HMS
             // 
             // cmbPatient
             // 
+            cmbPatient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbPatient.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbPatient.Location = new Point(323, 61);
             cmbPatient.Name = "cmbPatient";
             cmbPatient.Size = new Size(197, 28);
-            cmbPatient.TabIndex = 12;
+            cmbPatient.TabIndex = 1;
             // 
             // dgvBillDetails
             // 
@@ -56,7 +58,7 @@ namespace HMS
             dgvBillDetails.Name = "dgvBillDetails";
             dgvBillDetails.RowHeadersWidth = 82;
             dgvBillDetails.Size = new Size(1007, 225);
-            dgvBillDetails.TabIndex = 9;
+            dgvBillDetails.TabIndex = 3;
             dgvBillDetails.CellContentClick += dgvBillDetails_CellContentClick;
             dgvBillDetails.CellValueChanged += dgvBillDetails_CellValueChanged;
             dgvBillDetails.RowsRemoved += dgvBillDetails_RowsRemoved;
@@ -99,6 +101,7 @@ namespace HMS
             txtSubTotal.ReadOnly = true;
             txtSubTotal.Size = new Size(113, 27);
             txtSubTotal.TabIndex = 7;
+            txtSubTotal.TabStop = false;
             txtSubTotal.Text = "0";
             // 
             // txtTax
@@ -107,6 +110,7 @@ namespace HMS
             txtTax.Name = "txtTax";
             txtTax.Size = new Size(113, 27);
             txtTax.TabIndex = 5;
+            txtTax.TabStop = false;
             txtTax.Text = "0";
             txtTax.TextChanged += CalculateFinalTotals;
             // 
@@ -116,32 +120,37 @@ namespace HMS
             txtDiscount.Name = "txtDiscount";
             txtDiscount.Size = new Size(113, 27);
             txtDiscount.TabIndex = 3;
+            txtDiscount.TabStop = false;
             txtDiscount.Text = "0";
             txtDiscount.TextChanged += CalculateFinalTotals;
             // 
             // txtNet
             // 
-            txtNet.Location = new Point(323, 348);
+            txtNet.Location = new Point(323, 312);
             txtNet.Name = "txtNet";
             txtNet.ReadOnly = true;
             txtNet.Size = new Size(113, 27);
             txtNet.TabIndex = 1;
+            txtNet.TabStop = false;
             txtNet.Text = "0";
             // 
             // cmbPaymentMethod
             // 
+            cmbPaymentMethod.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbPaymentMethod.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbPaymentMethod.Items.AddRange(new object[] { "Cash", "Credit Card", "UPI" });
             cmbPaymentMethod.Location = new Point(323, 113);
             cmbPaymentMethod.Name = "cmbPaymentMethod";
             cmbPaymentMethod.Size = new Size(197, 28);
-            cmbPaymentMethod.TabIndex = 10;
+            cmbPaymentMethod.TabIndex = 2;
             // 
             // btnSaveBill
             // 
-            btnSaveBill.Location = new Point(482, 337);
+            btnSaveBill.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSaveBill.Location = new Point(188, 370);
             btnSaveBill.Name = "btnSaveBill";
             btnSaveBill.Size = new Size(140, 48);
-            btnSaveBill.TabIndex = 0;
+            btnSaveBill.TabIndex = 4;
             btnSaveBill.Text = "Save Bill";
             btnSaveBill.Click += btnSaveBill_Click;
             // 
@@ -149,7 +158,7 @@ namespace HMS
             // 
             lblNet.BackColor = Color.Transparent;
             lblNet.Font = new System.Drawing.Font("Calibri", 20F, FontStyle.Bold);
-            lblNet.Location = new Point(45, 336);
+            lblNet.Location = new Point(42, 300);
             lblNet.Name = "lblNet";
             lblNet.Size = new Size(223, 51);
             lblNet.TabIndex = 2;
@@ -159,7 +168,7 @@ namespace HMS
             // 
             lblDiscount.BackColor = Color.Transparent;
             lblDiscount.Font = new System.Drawing.Font("Calibri", 20F, FontStyle.Bold);
-            lblDiscount.Location = new Point(45, 239);
+            lblDiscount.Location = new Point(45, 238);
             lblDiscount.Name = "lblDiscount";
             lblDiscount.Size = new Size(223, 38);
             lblDiscount.TabIndex = 4;
@@ -215,7 +224,7 @@ namespace HMS
             dgvBillList.Name = "dgvBillList";
             dgvBillList.RowHeadersWidth = 51;
             dgvBillList.Size = new Size(287, 418);
-            dgvBillList.TabIndex = 29;
+            dgvBillList.TabIndex = 5;
             dgvBillList.CellContentClick += dgvBillDetails_CellContentClick;
             // 
             // panel1
@@ -253,6 +262,7 @@ namespace HMS
             Name = "BillingForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing Panel";
+            WindowState = FormWindowState.Maximized;
             Load += BillingForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBillDetails).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvBillList).EndInit();

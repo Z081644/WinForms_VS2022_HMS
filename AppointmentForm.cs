@@ -20,6 +20,7 @@ namespace HMS
             LoadPatients();
             LoadDoctors();
             LoadGrid();
+            textBox1.Focus();
         }
 
         private void LoadWard()

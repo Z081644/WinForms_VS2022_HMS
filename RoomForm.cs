@@ -17,6 +17,7 @@ namespace HMS
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadGrid();
+            textBox1.Focus();
         }
         private void LoadGrid()
         {

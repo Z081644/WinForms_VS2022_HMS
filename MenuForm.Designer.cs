@@ -244,6 +244,7 @@ namespace HMS
             DoubleBuffered = true;
             Name = "Menuform";
             Text = "Home Page";
+            WindowState = FormWindowState.Maximized;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();

@@ -56,6 +56,7 @@ namespace HMS
             lblDoctorId.Size = new Size(160, 41);
             lblDoctorId.TabIndex = 14;
             lblDoctorId.Text = "Doctor ID:";
+            lblDoctorId.Click += lblDoctorId_Click;
             // 
             // lblDocName
             // 
@@ -107,7 +108,7 @@ namespace HMS
             txtDoctorId.Margin = new Padding(3, 4, 3, 4);
             txtDoctorId.Name = "txtDoctorId";
             txtDoctorId.Size = new Size(228, 27);
-            txtDoctorId.TabIndex = 9;
+            txtDoctorId.TabIndex = 1;
             // 
             // txtDocName
             // 
@@ -115,7 +116,7 @@ namespace HMS
             txtDocName.Margin = new Padding(3, 4, 3, 4);
             txtDocName.Name = "txtDocName";
             txtDocName.Size = new Size(228, 27);
-            txtDocName.TabIndex = 8;
+            txtDocName.TabIndex = 2;
             // 
             // txtSpecialization
             // 
@@ -123,7 +124,7 @@ namespace HMS
             txtSpecialization.Margin = new Padding(3, 4, 3, 4);
             txtSpecialization.Name = "txtSpecialization";
             txtSpecialization.Size = new Size(228, 27);
-            txtSpecialization.TabIndex = 7;
+            txtSpecialization.TabIndex = 3;
             // 
             // txtPhone
             // 
@@ -131,7 +132,7 @@ namespace HMS
             txtPhone.Margin = new Padding(3, 4, 3, 4);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(228, 27);
-            txtPhone.TabIndex = 6;
+            txtPhone.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -144,11 +145,12 @@ namespace HMS
             // btnAdd
             // 
             btnAdd.BackColor = Color.AliceBlue;
+            btnAdd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnAdd.Location = new Point(513, 266);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(92, 42);
-            btnAdd.TabIndex = 4;
+            btnAdd.TabIndex = 6;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
@@ -156,11 +158,12 @@ namespace HMS
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.AliceBlue;
+            btnUpdate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnUpdate.Location = new Point(611, 266);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(92, 42);
-            btnUpdate.TabIndex = 3;
+            btnUpdate.TabIndex = 7;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
@@ -168,11 +171,12 @@ namespace HMS
             // btnDelete
             // 
             btnDelete.BackColor = Color.AliceBlue;
+            btnDelete.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnDelete.Location = new Point(513, 316);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(92, 42);
-            btnDelete.TabIndex = 2;
+            btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -180,11 +184,12 @@ namespace HMS
             // btnClear
             // 
             btnClear.BackColor = Color.AliceBlue;
+            btnClear.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnClear.Location = new Point(611, 316);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(92, 42);
-            btnClear.TabIndex = 1;
+            btnClear.TabIndex = 9;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click_1;
@@ -200,6 +205,7 @@ namespace HMS
             dgvDoctors.RowHeadersWidth = 51;
             dgvDoctors.Size = new Size(735, 231);
             dgvDoctors.TabIndex = 0;
+            dgvDoctors.TabStop = false;
             dgvDoctors.CellClick += dgvDoctors_CellClick;
             // 
             // panel1
@@ -237,7 +243,9 @@ namespace HMS
             DoubleBuffered = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "DoctorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Doctor Form";
+            WindowState = FormWindowState.Maximized;
             Load += DoctorForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDoctors).EndInit();
             panel1.ResumeLayout(false);

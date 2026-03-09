@@ -60,6 +60,7 @@
             dgvmedi.RowHeadersWidth = 51;
             dgvmedi.Size = new Size(809, 194);
             dgvmedi.TabIndex = 33;
+            dgvmedi.TabStop = false;
             dgvmedi.CellContentClick += dgvmedi_CellContentClick;
             // 
             // lblmed_id
@@ -133,53 +134,56 @@
             txtmed_id.Location = new Point(361, 74);
             txtmed_id.Name = "txtmed_id";
             txtmed_id.Size = new Size(151, 27);
-            txtmed_id.TabIndex = 40;
+            txtmed_id.TabIndex = 1;
             // 
             // manu_date
             // 
             manu_date.Location = new Point(361, 210);
             manu_date.Name = "manu_date";
             manu_date.Size = new Size(189, 27);
-            manu_date.TabIndex = 41;
+            manu_date.TabIndex = 4;
             // 
             // exp_date
             // 
             exp_date.Location = new Point(361, 258);
             exp_date.Name = "exp_date";
             exp_date.Size = new Size(189, 27);
-            exp_date.TabIndex = 42;
+            exp_date.TabIndex = 5;
             // 
             // txtmed_name
             // 
             txtmed_name.Location = new Point(361, 120);
             txtmed_name.Name = "txtmed_name";
             txtmed_name.Size = new Size(151, 27);
-            txtmed_name.TabIndex = 43;
+            txtmed_name.TabIndex = 2;
             // 
             // cmbmed_type
             // 
+            cmbmed_type.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbmed_type.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbmed_type.FormattingEnabled = true;
             cmbmed_type.Items.AddRange(new object[] { "Tablet/Pills", "Syrup/Liquid", "Capsules", "Injection/IV", "Inhalers", "Patches", "Creams/Ointments" });
             cmbmed_type.Location = new Point(361, 166);
             cmbmed_type.Name = "cmbmed_type";
             cmbmed_type.Size = new Size(151, 28);
-            cmbmed_type.TabIndex = 44;
+            cmbmed_type.TabIndex = 3;
             // 
             // txtmed_price
             // 
             txtmed_price.Location = new Point(361, 306);
             txtmed_price.Name = "txtmed_price";
             txtmed_price.Size = new Size(151, 27);
-            txtmed_price.TabIndex = 45;
+            txtmed_price.TabIndex = 6;
             // 
             // btnClear
             // 
             btnClear.BackColor = Color.AliceBlue;
+            btnClear.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnClear.Location = new Point(629, 370);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(92, 42);
-            btnClear.TabIndex = 46;
+            btnClear.TabIndex = 10;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click_1;
@@ -187,11 +191,12 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.AliceBlue;
+            btnDelete.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnDelete.Location = new Point(531, 370);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(92, 42);
-            btnDelete.TabIndex = 47;
+            btnDelete.TabIndex = 9;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -199,11 +204,12 @@
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.AliceBlue;
+            btnUpdate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnUpdate.Location = new Point(629, 320);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(92, 42);
-            btnUpdate.TabIndex = 48;
+            btnUpdate.TabIndex = 8;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
@@ -211,11 +217,12 @@
             // btnAdd
             // 
             btnAdd.BackColor = Color.AliceBlue;
+            btnAdd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnAdd.Location = new Point(531, 320);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(92, 42);
-            btnAdd.TabIndex = 49;
+            btnAdd.TabIndex = 7;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
@@ -255,7 +262,9 @@
             Controls.Add(dgvmedi);
             DoubleBuffered = true;
             Name = "PharmacyForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PharmacyForm";
+            WindowState = FormWindowState.Maximized;
             Load += PharmacyForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvmedi).EndInit();
             panel1.ResumeLayout(false);

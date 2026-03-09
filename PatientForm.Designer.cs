@@ -111,6 +111,7 @@ namespace HMS
             lblAddress.Size = new Size(141, 41);
             lblAddress.TabIndex = 14;
             lblAddress.Text = "Address:";
+            lblAddress.Click += lblAddress_Click;
             // 
             // txtPid
             // 
@@ -118,7 +119,7 @@ namespace HMS
             txtPid.Margin = new Padding(3, 4, 3, 4);
             txtPid.Name = "txtPid";
             txtPid.Size = new Size(228, 27);
-            txtPid.TabIndex = 12;
+            txtPid.TabIndex = 1;
             // 
             // txtPName
             // 
@@ -126,7 +127,7 @@ namespace HMS
             txtPName.Margin = new Padding(3, 4, 3, 4);
             txtPName.Name = "txtPName";
             txtPName.Size = new Size(228, 27);
-            txtPName.TabIndex = 11;
+            txtPName.TabIndex = 2;
             // 
             // rdoMale
             // 
@@ -137,7 +138,7 @@ namespace HMS
             rdoMale.Margin = new Padding(3, 4, 3, 4);
             rdoMale.Name = "rdoMale";
             rdoMale.Size = new Size(94, 39);
-            rdoMale.TabIndex = 9;
+            rdoMale.TabIndex = 3;
             rdoMale.Text = "Male";
             rdoMale.UseVisualStyleBackColor = false;
             // 
@@ -150,7 +151,7 @@ namespace HMS
             rdoFemale.Margin = new Padding(3, 4, 3, 4);
             rdoFemale.Name = "rdoFemale";
             rdoFemale.Size = new Size(120, 39);
-            rdoFemale.TabIndex = 10;
+            rdoFemale.TabIndex = 4;
             rdoFemale.Text = "Female";
             rdoFemale.UseVisualStyleBackColor = false;
             // 
@@ -161,61 +162,66 @@ namespace HMS
             txtAge.Name = "txtAge";
             txtAge.ReadOnly = true;
             txtAge.Size = new Size(228, 27);
-            txtAge.TabIndex = 8;
+            txtAge.TabIndex = 30;
+            txtAge.TabStop = false;
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(706, 84);
+            txtContact.Location = new Point(796, 84);
             txtContact.Margin = new Padding(3, 4, 3, 4);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(228, 27);
-            txtContact.TabIndex = 7;
+            txtContact.TabIndex = 6;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(706, 134);
+            txtAddress.Location = new Point(796, 134);
             txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(228, 27);
-            txtAddress.TabIndex = 6;
+            txtAddress.TabIndex = 7;
             // 
             // btnAdd
             // 
+            btnAdd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnAdd.Location = new Point(646, 311);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(92, 42);
-            btnAdd.TabIndex = 4;
+            btnAdd.TabIndex = 9;
             btnAdd.Text = "Add";
             btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
+            btnUpdate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnUpdate.Location = new Point(646, 363);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(92, 42);
-            btnUpdate.TabIndex = 3;
+            btnUpdate.TabIndex = 11;
             btnUpdate.Text = "Update";
             btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
+            btnDelete.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnDelete.Location = new Point(744, 311);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(92, 42);
-            btnDelete.TabIndex = 2;
+            btnDelete.TabIndex = 10;
             btnDelete.Text = "Delete";
             btnDelete.Click += btnDelete_Click;
             // 
             // btnClear
             // 
+            btnClear.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnClear.Location = new Point(744, 361);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(92, 42);
-            btnClear.TabIndex = 1;
+            btnClear.TabIndex = 12;
             btnClear.Text = "Clear";
             btnClear.Click += btnClear_Click;
             // 
@@ -227,8 +233,9 @@ namespace HMS
             dgvPatients.Margin = new Padding(3, 4, 3, 4);
             dgvPatients.Name = "dgvPatients";
             dgvPatients.RowHeadersWidth = 51;
-            dgvPatients.Size = new Size(988, 197);
+            dgvPatients.Size = new Size(1054, 197);
             dgvPatients.TabIndex = 0;
+            dgvPatients.TabStop = false;
             dgvPatients.CellClick += dgvPatients_CellClick;
             // 
             // label2
@@ -247,7 +254,7 @@ namespace HMS
             dateTimePicker1.Location = new Point(236, 227);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 32;
+            dateTimePicker1.TabIndex = 5;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label3
@@ -257,17 +264,20 @@ namespace HMS
             label3.Font = new Font("Calibri", 20F, FontStyle.Bold);
             label3.Location = new Point(531, 174);
             label3.Name = "label3";
-            label3.Size = new Size(169, 41);
+            label3.Size = new Size(223, 41);
             label3.TabIndex = 33;
-            label3.Text = "Doctor_ID:";
+            label3.Text = "Doctor_Name:";
+            label3.Click += label3_Click;
             // 
             // comboBox1
             // 
+            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(706, 186);
+            comboBox1.Location = new Point(796, 186);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 34;
+            comboBox1.Size = new Size(228, 28);
+            comboBox1.TabIndex = 8;
             // 
             // panel1
             // 
@@ -297,7 +307,7 @@ namespace HMS
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(988, 446);
+            panel1.Size = new Size(1054, 446);
             panel1.TabIndex = 35;
             // 
             // PatientForm
@@ -306,7 +316,7 @@ namespace HMS
             AutoScaleMode = AutoScaleMode.None;
             BackgroundImageLayout = ImageLayout.Stretch;
             CancelButton = btnClear;
-            ClientSize = new Size(988, 643);
+            ClientSize = new Size(1054, 643);
             Controls.Add(panel1);
             Controls.Add(dgvPatients);
             DoubleBuffered = true;
@@ -314,6 +324,7 @@ namespace HMS
             Name = "PatientForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Patient Application Window";
+            WindowState = FormWindowState.Maximized;
             Load += PatientForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPatients).EndInit();
             panel1.ResumeLayout(false);

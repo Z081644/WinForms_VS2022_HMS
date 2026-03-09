@@ -16,6 +16,7 @@ namespace HMS
         private void PharmacyForm_Load(object sender, EventArgs e)
         {
             LoadPharmacyForm();
+            txtmed_id.Focus();
         }
 
         private void LoadPharmacyForm()

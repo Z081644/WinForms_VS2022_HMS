@@ -17,6 +17,7 @@ namespace HMS
         private void DoctorForm_Load(object sender, EventArgs e)
         {
             LoadDoctorData();
+            txtDoctorId.Focus();
         }
         private void LoadDoctorData()
         {
@@ -191,6 +192,11 @@ VALUES (:Id, :Name, :Spec, :Phone, :Email)";
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             ClearInputs();
+        }
+
+        private void lblDoctorId_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

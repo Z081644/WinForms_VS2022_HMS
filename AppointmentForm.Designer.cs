@@ -73,9 +73,9 @@ namespace HMS
             label2.Location = new Point(38, 85);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(183, 41);
+            label2.Size = new Size(237, 41);
             label2.TabIndex = 1;
-            label2.Text = "Patient_ID :";
+            label2.Text = "Patient_Name :";
             // 
             // label3
             // 
@@ -85,9 +85,9 @@ namespace HMS
             label3.Location = new Point(38, 131);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(177, 41);
+            label3.Size = new Size(231, 41);
             label3.TabIndex = 2;
-            label3.Text = "Doctor_ID :";
+            label3.Text = "Doctor_Name :";
             // 
             // label4
             // 
@@ -109,64 +109,69 @@ namespace HMS
             label5.Location = new Point(38, 225);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(164, 41);
+            label5.Size = new Size(218, 41);
             label5.TabIndex = 4;
-            label5.Text = "Room_ID :";
+            label5.Text = "Room_Name :";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(253, 51);
+            textBox1.Location = new Point(289, 51);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(241, 27);
-            textBox1.TabIndex = 5;
+            textBox1.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(253, 187);
+            dateTimePicker1.Location = new Point(289, 187);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(241, 27);
-            dateTimePicker1.TabIndex = 8;
+            dateTimePicker1.TabIndex = 4;
             // 
             // cmbroom
             // 
+            cmbroom.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbroom.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbroom.FormattingEnabled = true;
-            cmbroom.Location = new Point(253, 237);
+            cmbroom.Location = new Point(289, 237);
             cmbroom.Margin = new Padding(2);
             cmbroom.Name = "cmbroom";
             cmbroom.Size = new Size(241, 28);
-            cmbroom.TabIndex = 9;
+            cmbroom.TabIndex = 5;
             // 
             // button1
             // 
+            button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button1.Location = new Point(500, 324);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(92, 42);
-            button1.TabIndex = 10;
+            button1.TabIndex = 6;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button2.Location = new Point(616, 324);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(92, 42);
-            button2.TabIndex = 11;
+            button2.TabIndex = 7;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button3
             // 
+            button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button3.Location = new Point(500, 381);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(92, 42);
-            button3.TabIndex = 12;
+            button3.TabIndex = 8;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
@@ -181,34 +186,40 @@ namespace HMS
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(784, 206);
             dataGridView1.TabIndex = 13;
+            dataGridView1.TabStop = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button4
             // 
+            button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button4.Location = new Point(616, 381);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(92, 42);
-            button4.TabIndex = 14;
+            button4.TabIndex = 9;
             button4.Text = "Clear";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
             // cmbpatient
             // 
+            cmbpatient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbpatient.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbpatient.FormattingEnabled = true;
-            cmbpatient.Location = new Point(253, 97);
+            cmbpatient.Location = new Point(289, 97);
             cmbpatient.Name = "cmbpatient";
             cmbpatient.Size = new Size(241, 28);
-            cmbpatient.TabIndex = 33;
+            cmbpatient.TabIndex = 2;
             // 
             // cmbdoc
             // 
+            cmbdoc.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbdoc.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbdoc.FormattingEnabled = true;
-            cmbdoc.Location = new Point(253, 143);
+            cmbdoc.Location = new Point(289, 143);
             cmbdoc.Name = "cmbdoc";
             cmbdoc.Size = new Size(241, 28);
-            cmbdoc.TabIndex = 34;
+            cmbdoc.TabIndex = 3;
             // 
             // panel1
             // 
@@ -244,7 +255,9 @@ namespace HMS
             DoubleBuffered = true;
             Margin = new Padding(2);
             Name = "AppointmentForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Appointment Form";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
